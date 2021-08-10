@@ -41,7 +41,7 @@ pipeline {
 //                    message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
       }
       failure {
-         echo "Failed Building release ${RELEASE} with log level ${LOG_LEVEL}..."
+         echo "Failed Building release ${RELEASE} with log level ..."
 //          slackSend channel: '#builds',
 //                    color: 'danger',
 //                    message: "Release ${env.RELEASE}, FAILED: ${currentBuild.fullDisplayName}."
