@@ -36,7 +36,7 @@ pipeline {
 //          slackSend channel: '#
          
          
-         s',
+//          s',
 //                    color: 'good',
 //                    message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
       }
