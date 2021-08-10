@@ -10,10 +10,10 @@ pipeline {
             }
             steps {
                echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
-               sh 'chmod +x m2/demo3/build.sh'
+               sh 'chmod +x /build.sh'
                withCredentials([string(credentialsId: 'an-api-key', variable: 'API_KEY')]) {
                   sh '''
-                     ./m2/demo3/build.sh
+                     ./build.sh
                   '''
                }
             }
@@ -33,14 +33,17 @@ pipeline {
    post {
       success {
          archiveArtifacts 'test-results.txt'
-         slackSend channel: '#builds',
-                   color: 'good',
-                   message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
+//          slackSend channel: '#
+         
+         
+         s',
+//                    color: 'good',
+//                    message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
       }
       failure {
-         slackSend channel: '#builds',
-                   color: 'danger',
-                   message: "Release ${env.RELEASE}, FAILED: ${currentBuild.fullDisplayName}."
+//          slackSend channel: '#builds',
+//                    color: 'danger',
+//                    message: "Release ${env.RELEASE}, FAILED: ${currentBuild.fullDisplayName}."
       }
    }
 }
