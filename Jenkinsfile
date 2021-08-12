@@ -4,6 +4,9 @@ pipeline {
    environment {
        DEMO='1.3'
    }
+   tools {
+     nodejs "nodejs"
+   }
 
    stages {
       stage('stage-1') {
