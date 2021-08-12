@@ -1,12 +1,15 @@
 pipeline {
-   agent any
+   agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+   }
 
    environment {
        DEMO='1.3'
    }
-   tools {
-     nodejs "nodejs"
-   }
+   
 
    stages {
       stage('stage-1') {
