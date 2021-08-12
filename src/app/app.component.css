@@ -1,0 +1,23 @@
+.login-wrapper {
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+.p-6 {
+  padding: 6px;
+}
+
+.input-wrapper input {
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 4px;
+  padding-left: 6px;
+}
+.input-wrapper input:focus {
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
