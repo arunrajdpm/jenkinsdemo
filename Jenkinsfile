@@ -1,6 +1,6 @@
 pipeline {
    agent any
-   
+
    environment {
        DEMO='1.3'
    }
@@ -13,6 +13,20 @@ pipeline {
                echo "Using a multi-line shell step"
                chmod +x test.sh
                ./test.sh
+            '''
+         }
+      }
+      stage ('build') {
+        steps {
+          sh 'npm run build'
+        }
+      }
+      stage('test') {
+         steps {
+            echo "it undergoes the ttest"
+            sh '''
+              npm run test
+
             '''
          }
       }
